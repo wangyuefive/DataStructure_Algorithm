@@ -79,6 +79,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasicSortor.cpp" />
+    <ClCompile Include="InsertSorter.cpp" />
+    <ClCompile Include="ShellSorter.cpp" />
     <ClCompile Include="Sorter.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

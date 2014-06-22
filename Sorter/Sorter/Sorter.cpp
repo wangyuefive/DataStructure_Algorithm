@@ -6,6 +6,11 @@
 #define COUNT 100U    //个数
 #define MAXNUM 1000U   //最大的数
 #define MINNUM 1U    //最小的数
+#define DEBUG
+
+extern void InsertSorter(int a[], int N);
+extern void ShellSorter(int a[] , int N);
+extern void BasicSorter(int a[], int N);
 
 /*自定义的数组*/
 typedef struct intArray{
@@ -29,38 +34,33 @@ pintArray createArray(void)
 		perror("error in calloc");
 		return NULL;
 	}
-	srand((unsigned int)time(NULL));
+	srand((unsigned int)time(NULL));   //种随机种子
 	for(i = 0 ; i < COUNT; i++)
 	{
 		*(result->a+i) = rand() % (MAXNUM+1 -MINNUM) + MINNUM;
 		count++;
 	}
 	result->length = count;
-
-
-	printf("生成的数组如下:长度为%d\n",count);
-	for( i = 0 ; i < result->length ; i++)
-		printf("%d  ",*(result->a+i));
-	printf("\n");
+#ifdef DEBUG
+	{
+		printf("生成的数组如下:长度为%d\n",count);
+		for( i = 0 ; i < result->length ; i++)
+			printf("%d  ",*(result->a+i));
+		printf("\n");
+	}
+#endif
 	return result;
 }
 
-/**
-*int a[] 指向数组的数组指针
-*int N : N数组的长度
-*/
-void InsertSorter(int a[], int N)
+void clearArray(pintArray arr)
 {
-	int i,j ;
-	int temp;
-	for( i = 1 ; i < N ; i++)
+	int i=0 ;
+	while(i < arr->length)
 	{
-		temp = *(a+i);
-		for(j = i ; j > 0 && a[j-1] > temp ; j-- )
-			a[j] = a[j-1];
-		a[j] = temp;
+		*(arr->a+i)= 0;
+		i++;
 	}
-
+	arr->length = 0;
 }
 
 void printResult(int a[],int N)
@@ -85,13 +85,31 @@ int main(int argc, _TCHAR* argv[])
 		perror("error in creatArray");
 		exit(-1);
 	}
+
+	printf("/******采用插入排序法********/\n");
 	ftime(&t1);   //获取当前时间
 	InsertSorter(intarray->a, intarray->length);
-	printResult(intarray->a, intarray->length);
 	ftime(&t2);
+#ifdef DEBUG
+	printResult(intarray->a, intarray->length);
+#endif
 	time = (t2.time - t1.time)*1000 + (t2.millitm - t1.millitm);
 	printf("所用时间为:%ld毫秒\n",time);
-	
+
+	clearArray(intarray);
+	intarray = createArray();
+	printf("/******采用希尔排序法********/\n");
+	ftime(&t1);   //获取当前时间
+	ShellSorter(intarray->a, intarray->length);
+	ftime(&t2);
+#ifdef DEBUG
+	printResult(intarray->a, intarray->length);
+#endif
+	time = (t2.time - t1.time)*1000 + (t2.millitm - t1.millitm);
+	printf("所用时间为:%ld毫秒\n",time);
+
+
+	free(intarray);
 	getchar();
 	return 0;
 }
