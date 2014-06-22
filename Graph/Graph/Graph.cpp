@@ -12,7 +12,7 @@ typedef int EdgeType;                   //边上的权值类型应由用户定义
 typedef struct
 {
     VertexType vexs[MAXVEX];            //顶点表
-    EdgeType   arc[MAXVEX][MAXVEX];         //邻接矩阵，可看作边
+    EdgeType   arc[MAXVEX][MAXVEX];         //邻接矩阵，可看作边 
     int numVertexes, numEdges;      //图中当前的顶点数和边数
 }Graph;
  
