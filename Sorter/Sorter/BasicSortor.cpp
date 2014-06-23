@@ -4,12 +4,12 @@
 *int a[] 指向数组的数组指针
 *int N : N数组的长度
 */
-void BasicSorter(int a[], int N)
+void BasicSorter(int a[], const int N)
 {
 	int i,j ;
 	int temp;
-	for( i = 1 ; i < N ; i++)
-		for(j = i ; j < N ; j++ )
+	for( i = 0 ; i < N -1 ; i++)
+		for(j = i + 1 ; j < N ; j++ )
 			if(a[i] > a[j])
 			{
 				temp = a[j] ;
