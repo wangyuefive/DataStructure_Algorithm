@@ -30,12 +30,12 @@ int find(int N)
 	double k ;
 	double half = N/2 ;
 	k = log((double)(half + 1)) / log((double)2);
-	if(k < half && k+1 > half)
-		return (int)k;
-	else{
-		perror("error in function find()");
-		return 0;
-	}
+	//if(k < half && k+1 > half)
+	return (int)k;
+	//else{
+	//	perror("error in function find()");
+		//return 0;
+	//}
 }
 
 /***
@@ -44,14 +44,15 @@ int find(int N)
 void ShellSorter_Hibbard(int a[] , const int N)
 {
 	int i ,j;
-	double inc;
+	int inc;
 	int temp;
 	int k = find(N);
-	for(inc = pow( ; inc > 0 ; inc = pow())   //增量序列
+
+	for(inc =(int)pow((double)2,k); inc > 0 ; inc = (int)pow((double)2,--k))   //增量序列  ,求pow 和log 消耗的时间太多了
 		for(i = inc ; i < N ; i++)   //采用插入法排序  元素中间间隔为inc
 		{
 			temp = a[i];
-			for( j = i; j >= inc; j -= inc)
+			for( j = i; j >= inc; j =j -inc)
 				if(temp < a[j - inc])
 					a[j] = a[j-inc];
 				else
