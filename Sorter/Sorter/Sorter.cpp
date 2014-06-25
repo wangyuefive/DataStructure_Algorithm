@@ -13,6 +13,7 @@ extern void ShellSorter(int a[] , int N);
 extern void BasicSorter(int a[], int N);
 extern void ShellSorter_Hibbard(int a[] , const int N);
 extern void HeapSorter(int a[] , int N);
+extern void MergeSorter(int a[] ,int N);
 
 /*自定义的数组*/
 typedef struct intArray{
@@ -163,6 +164,24 @@ int main(int argc, _TCHAR* argv[])
 #endif
 	ftime(&t1);   //获取当前时间
 	HeapSorter(intarray->a, intarray->length);
+	ftime(&t2);
+#ifdef DEBUG
+	printf("排序后的结果为:\n");
+	printArray(intarray->a, intarray->length);
+#endif
+	time = (t2.time - t1.time)*1000 + (t2.millitm - t1.millitm);
+	printf("所用时间为:%ld毫秒\n",time);
+
+
+	printf("\n\n\n");
+	*intarray =temparray;
+	printf("/******采用归并排序法********/\n");
+#ifdef DEBUG
+	printf("初始数组为:\n");
+	printArray(intarray->a, intarray->length);
+#endif
+	ftime(&t1);   //获取当前时间
+	MergeSorter(intarray->a, intarray->length);
 	ftime(&t2);
 #ifdef DEBUG
 	printf("排序后的结果为:\n");

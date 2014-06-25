@@ -82,6 +82,7 @@
     <ClCompile Include="BasicSortor.cpp" />
     <ClCompile Include="HeapSorter.cpp" />
     <ClCompile Include="InsertSorter.cpp" />
+    <ClCompile Include="MergeSorter.cpp" />
     <ClCompile Include="ShellSorter.cpp" />
     <ClCompile Include="Sorter.cpp" />
     <ClCompile Include="stdafx.cpp">
