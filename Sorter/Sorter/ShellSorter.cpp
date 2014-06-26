@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+extern int HibbardArray[32];   //在主程序中定义   
+
 /***
   *希尔排序,采用最常见的二分增量序列
 */
@@ -27,15 +29,13 @@ void ShellSorter(int a[] , const int N)
 **/
 int find(int N)
 {
-	double k ;
-	double half = N/2 ;
-	k = log((double)(half + 1)) / log((double)2);
-	//if(k < half && k+1 > half)
-	return (int)k;
-	//else{
-	//	perror("error in function find()");
-		//return 0;
-	//}
+	int i = 0;
+	for(i = 0 ; i < 32 ; i++)
+	{
+		if(HibbardArray[i]  <= N/2 && HibbardArray[i+1] > N/2  )
+			return i;
+	}
+	return -1;
 }
 
 /***
@@ -48,7 +48,7 @@ void ShellSorter_Hibbard(int a[] , const int N)
 	int temp;
 	int k = find(N);
 
-	for(inc =(int)pow((double)2,k); inc > 0 ; inc = (int)pow((double)2,--k))   //增量序列  ,求pow 和log 消耗的时间太多了
+	for(inc =HibbardArray[k]; inc > 0 ; inc = HibbardArray[--k])   //增量序列  ,求pow 和log 消耗的时间太多了
 		for(i = inc ; i < N ; i++)   //采用插入法排序  元素中间间隔为inc
 		{
 			temp = a[i];

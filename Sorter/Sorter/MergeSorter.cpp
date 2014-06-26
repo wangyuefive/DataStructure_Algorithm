@@ -4,7 +4,7 @@
 ** 采用递归的归并排序
 *********************/
 
-void Merge(int a[], int tempArray[] , int Lpos ,int Rpos ,int RightEnd)\
+void Merge(int a[], int tempArray[] , int Lpos ,int Rpos ,int RightEnd)
 {
 	int i,leftEnd,Elemcount,tmpPos;
 
@@ -28,8 +28,11 @@ void Merge(int a[], int tempArray[] , int Lpos ,int Rpos ,int RightEnd)\
 		tempArray[tmpPos++] = a[Rpos++];
 
 	/*将临时数组的排好序的元素 copy到原数组*/
-	for(i = 0; i < Elemcount; i++,RightEnd--)
-		a[RightEnd--] = tempArray[RightEnd--];
+	for(i = 0; i < Elemcount; i++)
+	{
+		a[RightEnd] = tempArray[RightEnd];
+		RightEnd--;
+	}
 }
 
 /**
@@ -39,7 +42,7 @@ void Msort(int a[] , int tempArray[] , int left , int right)
 {
 	int center;
 
-	while(left < right)
+	if(left < right)
 	{
 		center = (right + left) /2;
 		Msort(a,tempArray,left,center);
@@ -52,7 +55,7 @@ void MergeSorter(int a[] ,int N)
 {
 	int *tempArray;
 
-	tempArray = (int*)malloc(N*sizeof(int));
+	tempArray = (int*)calloc(N,sizeof(int));
 	if(NULL != tempArray)
 	{
 		Msort(a,tempArray,0,N-1);

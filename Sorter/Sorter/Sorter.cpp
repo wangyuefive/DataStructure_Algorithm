@@ -21,6 +21,16 @@ typedef struct intArray{
 	int length;
 }intArray,*pintArray;
 
+int HibbardArray[32];    //希尔排序_Hibbard序列;对于32位int，2^32次方已经到了顶了
+
+void CreateHibbardArray(int HibbardArray[] )
+{
+	int i = 0;
+	HibbardArray[0] = 1;
+	for(i = 1; i < 32 ; i++)
+		HibbardArray[i] = HibbardArray[i-1] *2;
+}
+
 
 /**
 *生成一个长度为COUNT ,大小位于MAXNUM-MINNUM之间的随机数组
@@ -93,7 +103,7 @@ int main(int argc, _TCHAR* argv[])
 	printf("\n\n\n");
 	printf("/******采用基本冒泡排序法********/\n");
 	ftime(&t1);   //获取当前时间
-	BasicSorter(intarray->a, intarray->length);
+	//BasicSorter(intarray->a, intarray->length);
 	ftime(&t2);
 #ifdef DEBUG
 	printf("排序后的结果为:\n");
@@ -137,6 +147,7 @@ int main(int argc, _TCHAR* argv[])
 	printf("所用时间为:%ld毫秒\n",time);
 
 
+	CreateHibbardArray(HibbardArray);   //生成HIbbard序列
 	printf("\n\n\n");
 	*intarray =temparray;
 	printf("/******采用希尔_Hibbard增量排序法********/\n");
