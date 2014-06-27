@@ -3,17 +3,19 @@
 
 #include "stdafx.h"
 
-#define COUNT 10000U    //个数
-#define MAXNUM 1000000U   //最大的数
+#define COUNT  200000U   //个数
+#define MAXNUM 300000U   //最大的数
 #define MINNUM 1U    //最小的数
 //#define DEBUG
 
 extern void InsertSorter(int a[], int N);
 extern void ShellSorter(int a[] , int N);
 extern void BasicSorter(int a[], int N);
+extern void CreateHibbardArray(int HibbardArray[] ) ; //创建HIbbard序列
 extern void ShellSorter_Hibbard(int a[] , const int N);
 extern void HeapSorter(int a[] , int N);
 extern void MergeSorter(int a[] ,int N);
+extern void QuickSort(int a[], int N);
 
 /*自定义的数组*/
 typedef struct intArray{
@@ -21,15 +23,7 @@ typedef struct intArray{
 	int length;
 }intArray,*pintArray;
 
-int HibbardArray[32];    //希尔排序_Hibbard序列;对于32位int，2^32次方已经到了顶了
-
-void CreateHibbardArray(int HibbardArray[] )
-{
-	int i = 0;
-	HibbardArray[0] = 1;
-	for(i = 1; i < 32 ; i++)
-		HibbardArray[i] = HibbardArray[i-1] *2;
-}
+extern int HibbardArray[32];    //希尔排序_Hibbard序列;对于32位int，2^32次方已经到了顶了
 
 
 /**
@@ -193,6 +187,23 @@ int main(int argc, _TCHAR* argv[])
 #endif
 	ftime(&t1);   //获取当前时间
 	MergeSorter(intarray->a, intarray->length);
+	ftime(&t2);
+#ifdef DEBUG
+	printf("排序后的结果为:\n");
+	printArray(intarray->a, intarray->length);
+#endif
+	time = (t2.time - t1.time)*1000 + (t2.millitm - t1.millitm);
+	printf("所用时间为:%ld毫秒\n",time);
+
+	printf("\n\n\n");
+	*intarray =temparray;
+	printf("/******采用快速排序法********/\n");
+#ifdef DEBUG
+	printf("初始数组为:\n");
+	printArray(intarray->a, intarray->length);
+#endif
+	ftime(&t1);   //获取当前时间
+	QuickSort(intarray->a, intarray->length);
 	ftime(&t2);
 #ifdef DEBUG
 	printf("排序后的结果为:\n");

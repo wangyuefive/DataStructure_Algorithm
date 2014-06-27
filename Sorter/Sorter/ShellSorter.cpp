@@ -1,6 +1,14 @@
 #include "stdafx.h"
 
-extern int HibbardArray[32];   //在主程序中定义   
+int HibbardArray[32];   //在主程序中定义   
+
+void CreateHibbardArray(int HibbardArray[] )
+{
+	int i = 0;
+	HibbardArray[0] = 1;
+	for(i = 1; i < 32 ; i++)
+		HibbardArray[i] = HibbardArray[i-1] *2;
+}
 
 /***
   *希尔排序,采用最常见的二分增量序列
@@ -40,6 +48,7 @@ int find(int N)
 
 /***
   *希尔排序,采用Hibbard序列 ：1 3 7   。。。。2^k-1 
+  *调用前，先使用 CreateHibbardArray()创建一个HIbbard序列并引用;
 */
 void ShellSorter_Hibbard(int a[] , const int N)
 {
