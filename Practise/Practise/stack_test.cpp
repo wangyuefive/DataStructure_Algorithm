@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Stacks.h"
 
+/*
 int main(void)
 {
 	char a[12] = "I LOVE YOU";
@@ -19,4 +20,4 @@ int main(void)
 		printf("num %d is %c\n",i,temp);
 	}
 	getchar();
-}
+}*/
