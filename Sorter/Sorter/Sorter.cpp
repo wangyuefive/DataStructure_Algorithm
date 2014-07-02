@@ -97,7 +97,7 @@ int main(int argc, _TCHAR* argv[])
 	printf("\n\n\n");
 	printf("/******采用基本冒泡排序法********/\n");
 	ftime(&t1);   //获取当前时间
-	//BasicSorter(intarray->a, intarray->length);
+	BasicSorter(intarray->a, intarray->length);
 	ftime(&t2);
 #ifdef DEBUG
 	printf("排序后的结果为:\n");
