@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "BinarySortTree.h"
 
 #define COUNT  20U   //个数
 #define MAXNUM 30U   //最大的数
@@ -93,7 +94,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		exit(-1);
 	}
 
-
+	free(intarray);
 	getchar();
 	return 0;
 }
