@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "BinarySortTree.h"
 
-#define COUNT  20U   //个数
+#define COUNT  10U   //个数
 #define MAXNUM 30U   //最大的数
 #define MINNUM 1U    //最小的数
 #define DEBUG
@@ -82,18 +82,23 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	pintArray intarray;
 	intArray temparray;    //用于保存初始数据
+	pTreeNode root;           //原始二叉排序树的根节点
 	timeb t1,t2;
 	time_t time ;
+	int num ;
 
 	intarray = createArray();  //生成原始数组
 	temparray = *intarray;  
-	
-	if(NULL == intarray)
+	if(NULL == intarray || NULL == root)
 	{
-		perror("error in creatArray");
+		perror("error in creatArray or calloc");
 		exit(-1);
 	}
+		
 
+
+	
+	EmptyTree(root);
 	free(intarray);
 	getchar();
 	return 0;
