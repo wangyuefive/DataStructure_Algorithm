@@ -21,4 +21,15 @@ typedef struct {
 	pTreeNode tree; 
 }FindedReturnValue;
 
+extern int EmptyTree(pTreeNode tree);
+extern FindedReturnValue Find(pTreeNode const root, int e);
+extern pTreeNode FindMax(pTreeNode const root);
+extern pTreeNode FindMin(pTreeNode const root);
+extern int AddPosition(position *p , int pos);
+extern int Insert(pTreeNode root, int e, int pos);
+extern int Delete(pTreeNode const root, int e);
+extern pTreeNode createBST(int a[], int length);
+extern void printResult(pTreeNode tree);
+extern void FindNum(pTreeNode tree);
+
 #endif

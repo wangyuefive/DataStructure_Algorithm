@@ -1,0 +1,28 @@
+﻿1>------ 已启动全部重新生成: 项目: Search, 配置: Debug Win32 ------
+1>生成启动时间为 2014/7/13 星期日 11:32:10。
+1>_PrepareForClean:
+1>  正在删除文件“Debug\Search.lastbuildstate”。
+1>InitializeBuildStatus:
+1>  正在对“Debug\Search.unsuccessfulbuild”执行 Touch 任务。
+1>ClCompile:
+1>  stdafx.cpp
+1>  Search.cpp
+1>g:\github\datastructure_algorithm\search\search\search.cpp(76): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+1>          c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(304) : 参见“scanf”的声明
+1>g:\github\datastructure_algorithm\search\search\search.cpp(89): warning C4101: “num”: 未引用的局部变量
+1>g:\github\datastructure_algorithm\search\search\search.cpp(88): warning C4101: “time”: 未引用的局部变量
+1>g:\github\datastructure_algorithm\search\search\search.cpp(87): warning C4101: “t2”: 未引用的局部变量
+1>g:\github\datastructure_algorithm\search\search\search.cpp(87): warning C4101: “t1”: 未引用的局部变量
+1>  BinarySortTree.cpp
+1>  BinarySearch.cpp
+1>  正在生成代码...
+1>Link:
+1>  Search.vcxproj -> G:\GitHub\DataStructure_Algorithm\Search\Debug\Search.exe
+1>FinalizeBuildStatus:
+1>  正在删除文件“Debug\Search.unsuccessfulbuild”。
+1>  正在对“Debug\Search.lastbuildstate”执行 Touch 任务。
+1>
+1>生成成功。
+1>
+1>已用时间 00:00:01.02
+========== 全部重新生成: 成功 1 个，失败 0 个，跳过 0 个 ==========

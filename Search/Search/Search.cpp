@@ -69,37 +69,36 @@ void printArray(int a[],int N)
 	printf("\n");
 }
 
-int getNum(void)
-{
-	int num;
-	printf("\n请输入查找的数：");
-	scanf("%d",&num);
-	while(getchar()!='\n');
-	return num;
-}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	pintArray intarray;
 	intArray temparray;    //用于保存初始数据
 	pTreeNode root;           //原始二叉排序树的根节点
+	FindedReturnValue result;
 	timeb t1,t2;
 	time_t time ;
 	int num ;
+	int i , j ;
 
 	intarray = createArray();  //生成原始数组
 	temparray = *intarray;  
-	if(NULL == intarray || NULL == root)
+	if(NULL == intarray)
 	{
 		perror("error in creatArray or calloc");
 		exit(-1);
 	}
 		
+	root = createBST(intarray->a, intarray->length);
+	if(root == NULL){
+		perror("error in func createBST()");
+		return -1;
+	}
+
+	FindNum(root);
 
 
-	
-	EmptyTree(root);
-	free(intarray);
+	printf("\n按任意键退出\n");
 	getchar();
 	return 0;
 }
