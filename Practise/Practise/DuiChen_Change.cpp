@@ -5,7 +5,7 @@
 
 unsigned char ch[32] =
 {
-}
+};
 
 unsigned char change(unsigned char ch)
 {
@@ -18,6 +18,7 @@ unsigned char change(unsigned char ch)
 	return result;
 }
 
+/*
 int main(void)
 {
 	int i =0;
@@ -28,4 +29,4 @@ int main(void)
 		printf("0x%x,",ch[i]);
 	}
 	getchar();
-}
+}*/

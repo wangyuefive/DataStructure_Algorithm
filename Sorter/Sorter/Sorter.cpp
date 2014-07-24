@@ -1,5 +1,4 @@
 // Sorter.cpp : 定义控制台应用程序的入口点。
-//
 
 #include "stdafx.h"
 
@@ -44,7 +43,7 @@ pintArray createArray(void)
 	srand((unsigned int)time(NULL));   //种随机种子
 	for(i = 0 ; i < COUNT; i++)
 	{
-		*(result->a+i) = rand() % (MAXNUM+1 -MINNUM) + MINNUM;
+		*(result->a+i) = rand() % (MAXNUM+1 - MINNUM) + MINNUM;
 		count++;
 	}
 	result->length = count;

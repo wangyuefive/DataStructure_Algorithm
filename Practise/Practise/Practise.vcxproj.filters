@@ -44,5 +44,8 @@
     <ClCompile Include="DuiChen_Change.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EightBlackQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

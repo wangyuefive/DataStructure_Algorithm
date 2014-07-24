@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="Braces_Match.cpp" />
     <ClCompile Include="DuiChen_Change.cpp" />
+    <ClCompile Include="EightBlackQueue.cpp" />
     <ClCompile Include="Practise.cpp" />
     <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="stdafx.cpp">
