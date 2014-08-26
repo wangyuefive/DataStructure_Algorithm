@@ -54,8 +54,9 @@ void EightQueue(int N)
 	return ;
 }
 
+/*
 int main()
 {
 	EightQueue(0);
 	getchar();
-}
+}*/
