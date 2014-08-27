@@ -64,7 +64,7 @@ void StrTraverse(char *s)
 
 }
 
-
+/*
 int main(void)
 {
 	char s[40] = "I come from China.   you";
@@ -72,4 +72,4 @@ int main(void)
 	printf("%s",s);
 	getchar();
 	return 0;
-}
+}*/

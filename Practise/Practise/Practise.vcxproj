@@ -84,6 +84,7 @@
     <ClCompile Include="Braces_Match.cpp" />
     <ClCompile Include="DuiChen_Change.cpp" />
     <ClCompile Include="EightBlackQueue.cpp" />
+    <ClCompile Include="Fn.cpp" />
     <ClCompile Include="Integer2String.cpp" />
     <ClCompile Include="Practise.cpp" />
     <ClCompile Include="stack_test.cpp" />
