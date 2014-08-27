@@ -61,7 +61,7 @@ int String2Integer(char *s)
 	return flag*sum;
 }
 
-
+/*
 int _tmain(int argc, _TCHAR* argv[])
 {
 
@@ -69,4 +69,4 @@ int _tmain(int argc, _TCHAR* argv[])
 	printf("\n%d",String2Integer("123456789"));
 	getchar();
 	return 0;
-}
+}*/
