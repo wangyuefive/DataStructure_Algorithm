@@ -43,6 +43,7 @@ void printfStr(char *s)
 	}
 }
 
+/*
 int main(void)
 {
 	unsigned int MAX = 4000000000;   //刚开始定义为了 int 型，结果直接超了
@@ -68,3 +69,4 @@ int main(void)
 	getchar();
 	return 0;
 }
+*/

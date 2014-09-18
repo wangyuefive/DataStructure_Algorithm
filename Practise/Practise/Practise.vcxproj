@@ -86,7 +86,9 @@
     <ClCompile Include="EightBlackQueue.cpp" />
     <ClCompile Include="Fn.cpp" />
     <ClCompile Include="Integer2String.cpp" />
+    <ClCompile Include="Matrx_find.cpp" />
     <ClCompile Include="Practise.cpp" />
+    <ClCompile Include="ReBuildTree.cpp" />
     <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
